@@ -1,137 +1,84 @@
-# Zibon Madbor — Cyberpunk Portfolio Website
-
-A **production-ready, cyberpunk-themed portfolio** for a Full Stack MERN Developer & Cyber Security Expert, built with React + Vite + Tailwind CSS + Framer Motion.
-
-
----
-
-## ✨ Features
-
-| Feature | Details |
-|---|---|
-| **Matrix Rain** | Canvas-based falling katakana/number animation |
-| **Glitch Text** | CSS glitch effect on the hero name |
-| **Typing Animation** | Terminal typewriter cycling through roles |
-| **Neon Progress Bars** | Animated skill bars (green / cyan / purple) |
-| **Glassmorphism Cards** | Blurred, semi-transparent card panels |
-| **Cyber Grid Background** | Animated CSS grid overlay |
-| **Scanning Line** | Moving scan-line overlay effect |
-| **Radar Animation** | Rotating radar sweep in About section |
-| **Cursor Glow Trail** | Neon green cursor with lagging ring |
-| **Smooth Scroll Nav** | Fixed navbar with active section detection |
-| **Fully Responsive** | Mobile, tablet, desktop layouts |
-| **SEO Optimized** | Meta tags, semantic HTML, descriptive titles |
+<div align="center">
+  <br />
+  <h1>
+    <span style="color: #00ff96;">&lt;</span> 
+    CyberStyle Portfolio 
+    <span style="color: #00ff96;">/&gt;</span>
+  </h1>
+  <p><b>A highly immersive, cyberpunk-themed personal portfolio built for the future.</b></p>
+  
+  <p>
+    <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" /></a>
+    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" /></a>
+    <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" /></a>
+    <a href="https://www.framer.com/motion/"><img src="https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue" alt="Framer Motion" /></a>
+  </p>
+</div>
 
 ---
 
-## 🗂️ Project Structure
+## ⚡ Overview
 
-```
-src/
-├── components/
-│   ├── MatrixRain.tsx        # Canvas matrix rain background
-│   ├── GlitchText.tsx        # CSS glitch name animation
-│   ├── TypingAnimation.tsx   # Terminal typewriter effect
-│   ├── CursorGlow.tsx        # Neon cursor glow trail
-│   ├── CyberNavBar.tsx       # Fixed sticky navigation
-│   ├── HeroSection.tsx       # Hero with glitch name + CTA
-│   ├── AboutSection.tsx      # Terminal bio + radar graphic
-│   ├── SkillsSection.tsx     # Neon progress bar skill cards
-│   ├── ProjectsSection.tsx   # Cyber dashboard project cards
-│   ├── ServicesSection.tsx   # Service offering neon cards
-│   ├── TimelineSection.tsx   # Education & experience timeline
-│   ├── ContactSection.tsx    # Terminal contact form + socials
-│   └── FooterSection.tsx     # Cyber-themed footer
-├── pages/
-│   └── Index.tsx             # Main page assembling all sections
-├── index.css                 # Design system (all CSS tokens)
-└── main.tsx                  # React entry point
+Welcome to **CyberStyle Portfolio**, an ultra-modern, neon-infused web experience tailored for developers and security experts. Designed with a dark aesthetic, glowing accents, and smooth micro-animations, this portfolio ensures a jaw-dropping first impression.
 
-tailwind.config.ts            # Extended with cyber color tokens
-index.html                    # SEO meta tags + Google Fonts
-```
+### ✨ Key Features
+- **Matrix Rain Background:** A fully dynamic, canvas-based digital rain effect.
+- **Glitch Text & Animations:** Immersive typography powered by Framer Motion.
+- **Custom Cursor Glow:** Interactive cursor trailing effect for a true cyber feel.
+- **Embedded PDF CV Generator:** Generates a flawlessly styled PDF CV right in the browser using `html2pdf.js`.
+- **FormSubmit Integration:** Built-in working contact form without needing a backend server.
+- **Fully Responsive:** Beautifully crafted for mobile, tablet, and desktop viewing.
 
 ---
 
-## 🎨 Design System
+## 🛠️ Built With
 
-### Color Palette
-
-| Token | HSL | Hex |
-|---|---|---|
-| `--neon-green` (primary) | `152 100% 50%` | `#00FF9C` |
-| `--neon-cyan` (secondary) | `191 100% 50%` | `#00D9FF` |
-| `--neon-purple` (accent) | `258 90% 66%` | `#8B5CF6` |
-| `--background` | `222 91% 5%` | `#020617` |
-| `--foreground` | `220 13% 91%` | `#E5E7EB` |
-
-### Typography
-- **Headings:** [Orbitron](https://fonts.google.com/specimen/Orbitron) → `font-orbitron`
-- **Code/Terminal:** [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) → `font-mono`
-- **Body:** [Inter](https://fonts.google.com/specimen/Inter) → `font-inter`
+* **Core:** React 18, TypeScript, Vite
+* **Styling:** Tailwind CSS, Custom Neon Variables
+* **Animations:** Framer Motion
+* **Icons:** Lucide React
 
 ---
 
-## 🚀 Setup & Run Locally
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
-- Node.js 18+ or Bun
 
-**Add SPA redirect** — create `public/_redirects`:
-```
-/*    /index.html   200
-```
+You need [Node.js](https://nodejs.org/) installed on your machine.
 
----
+### Installation
 
-## ⚙️ Environment Setup
-
-No environment variables are required for the base portfolio.
-
-If you add a contact form backend, create `.env`:
-```env
-VITE_EMAIL_ENDPOINT=https://your-api.com/contact
-```
-
----
-
-## 📋 Customization Checklist
-
-- [ ] Update your name in `HeroSection.tsx` and `CyberNavBar.tsx`
-- [ ] Update the bio text in `AboutSection.tsx`
-- [ ] Adjust skill percentages in `SkillsSection.tsx`
-- [ ] Add your real projects in `ProjectsSection.tsx`
-- [ ] Update GitHub / LinkedIn / WhatsApp links in `ContactSection.tsx` and `FooterSection.tsx`
-- [ ] Replace placeholder email with your real email address
-- [ ] Add your CV PDF at `public/resume.pdf`
-- [ ] Update `<meta>` tags in `index.html` with your real name and description
-
----
-
-## 🛡️ Security Notes
-
-- Contact form validates required fields client-side
-- All external links use `rel="noopener noreferrer"` to prevent tab-napping
-- No API keys or secrets committed to the repository
-
----
-
-## 📦 Tech Stack
-
-| Technology | Purpose |
-|---|---|
-| React 18 | UI framework |
-| Vite | Build tool & dev server |
-| TypeScript | Type safety |
-| Tailwind CSS | Utility-first styling |
-| Framer Motion | Animations |
-| Lucide React | Icons |
-| React Router 6 | Client-side routing |
+1. **Clone the repo**
+   ```sh
+   git clone https://github.com/zibonmadbor/CyberStyle-Portfolio.git
+   ```
+2. **Navigate to the directory**
+   ```sh
+   cd CyberStyle-Portfolio
+   ```
+3. **Install NPM packages**
+   ```sh
+   npm install
+   ```
+4. **Run the development server**
+   ```sh
+   npm run dev
+   ```
+5. **Open in browser**
+   ```
+   http://localhost:5173
+   ```
 
 ---
 
 ## 📄 License
 
-MIT © Zibon Madbor 2024
+Distributed under the MIT License. See `LICENSE` for more information.
 
-*Built with ❤️ and cyber security in mind.*
+---
+
+<div align="center">
+  <p>Built with 💚 by <a href="https://github.com/zibonmadbor">Jibon Madber</a></p>
+</div>
