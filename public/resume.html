@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jibon Madber — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080e1a;
+      --bg-card: #0c1424;
+      --fg: #d8dee9;
+      --muted: #6b7a8d;
+      --green: #00ff96;
+      --cyan: #00d4ff;
+      --purple: #9b5de5;
+      --border: rgba(0,255,150,0.2);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+    }
+
+    /* ─── Page container ─── */
+    .cv-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 52px;
+      background: var(--bg);
+      position: relative;
+    }
+
+    /* Corner decorations */
+    .cv-page::before, .cv-page::after {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-color: var(--green);
+      opacity: 0.5;
+    }
+    .cv-page::before { top: 16px; left: 16px; border-left: 2px solid; border-top: 2px solid; }
+    .cv-page::after { top: 16px; right: 16px; border-right: 2px solid; border-top: 2px solid; }
+
+    /* ─── Header ─── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), transparent);
+    }
+
+    .header-left h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: var(--fg);
+      text-shadow: 0 0 20px rgba(0,255,150,0.3);
+      margin-bottom: 6px;
+    }
+    .header-left .title-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--cyan);
+      letter-spacing: 0.04em;
+    }
+    .header-left .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--green);
+      margin-top: 8px;
+      padding: 3px 10px;
+      border: 1px solid rgba(0,255,150,0.3);
+      border-radius: 3px;
+      background: rgba(0,255,150,0.06);
+    }
+    .status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
+
+    .header-right {
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 2;
+    }
+    .header-right a { color: var(--green); text-decoration: none; }
+    .header-right .label { color: var(--cyan); font-size: 10px; margin-right: 4px; }
+
+    /* ─── Two-column layout ─── */
+    .content { display: grid; grid-template-columns: 1fr 280px; gap: 36px; }
+
+    /* ─── Section heading ─── */
+    .section-heading {
+      font-family: 'Orbitron', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--green);
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-heading .bracket { color: var(--green); opacity: 0.5; }
+    .section-heading .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    .section-heading-cyan { color: var(--cyan); border-bottom-color: rgba(0,212,255,0.2); }
+    .section-heading-cyan .line { background: linear-gradient(90deg, rgba(0,212,255,0.2), transparent); }
+
+    .section-heading-purple { color: var(--purple); border-bottom-color: rgba(155,93,229,0.2); }
+    .section-heading-purple .line { background: linear-gradient(90deg, rgba(155,93,229,0.2), transparent); }
+
+    /* ─── Summary ─── */
+    .summary {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      padding: 14px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      border-left: 3px solid var(--green);
+    }
+
+    /* ─── Experience / Education blocks ─── */
+    .entry { margin-bottom: 22px; }
+    .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+    .entry-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .entry-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--green);
+      padding: 2px 8px;
+      border: 1px solid rgba(0,255,150,0.2);
+      border-radius: 3px;
+      background: rgba(0,255,150,0.05);
+      white-space: nowrap;
+    }
+    .entry-org {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--cyan);
+      margin-bottom: 6px;
+    }
+    .entry-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .entry-desc li {
+      margin-bottom: 3px;
+      margin-left: 14px;
+      position: relative;
+      list-style: none;
+    }
+    .entry-desc li::before {
+      content: '▹';
+      position: absolute;
+      left: -14px;
+      color: var(--green);
+      font-size: 10px;
+    }
+
+    /* ─── Projects ─── */
+    .project { margin-bottom: 18px; }
+    .project-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 3px;
+    }
+    .project-desc { font-size: 11px; color: var(--muted); line-height: 1.55; margin-bottom: 5px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      border: 1px solid rgba(0,212,255,0.25);
+      color: var(--cyan);
+      background: rgba(0,212,255,0.05);
+    }
+
+    /* ─── Sidebar Skills ─── */
+    .sidebar section { margin-bottom: 24px; }
+
+    .skill-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+      padding: 4px 8px;
+      border-radius: 3px;
+    }
+    .skill-category-green { color: var(--green); background: rgba(0,255,150,0.08); border: 1px solid rgba(0,255,150,0.2); }
+    .skill-category-cyan { color: var(--cyan); background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2); }
+    .skill-category-purple { color: var(--purple); background: rgba(155,93,229,0.08); border: 1px solid rgba(155,93,229,0.2); }
+
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .skill-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--fg);
+    }
+    .skill-bar-track {
+      width: 90px;
+      height: 4px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+    .fill-green { background: linear-gradient(90deg, rgba(0,255,150,0.5), var(--green)); box-shadow: 0 0 6px rgba(0,255,150,0.5); }
+    .fill-cyan { background: linear-gradient(90deg, rgba(0,212,255,0.5), var(--cyan)); box-shadow: 0 0 6px rgba(0,212,255,0.5); }
+    .fill-purple { background: linear-gradient(90deg, rgba(155,93,229,0.5), var(--purple)); box-shadow: 0 0 6px rgba(155,93,229,0.5); }
+
+    /* ─── Extra tech list ─── */
+    .tech-list { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tech-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      background: rgba(0,255,150,0.06);
+      border: 1px solid rgba(0,255,150,0.15);
+      color: var(--green);
+    }
+
+    /* ─── Services list ─── */
+    .service-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--fg);
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── Languages / Interests ─── */
+    .info-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--fg);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .info-bullet { color: var(--green); font-size: 10px; }
+
+    /* ─── Footer ─── */
+    .cv-footer {
+      margin-top: 32px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── Download bar ─── */
+    .download-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8,14,26,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+    .download-bar span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .btn-download {
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 24px;
+      border: 1px solid var(--green);
+      background: var(--green);
+      color: var(--bg);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-download:hover {
+      background: rgba(0,255,150,0.85);
+      box-shadow: 0 0 20px rgba(0,255,150,0.5), 0 0 40px rgba(0,255,150,0.25);
+    }
+    .btn-download:disabled {
+      opacity: 0.5;
+      cursor: wait;
+    }
+
+    /* ─── Print / PDF styles ─── */
+    @media print {
+      .download-bar { display: none !important; }
+      body { background: #080e1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .cv-page { padding: 24px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Download bar (hidden in PDF) -->
+  <div class="download-bar" id="downloadBar">
+    <span>📄 Jibon Madber — Curriculum Vitae</span>
+    <button class="btn-download" id="downloadBtn" onclick="generatePDF()">⬇ Download PDF</button>
+  </div>
+
+  <div style="height: 56px;"></div><!-- spacer for fixed bar -->
+
+  <div class="cv-page" id="cvContent">
+
+    <!-- ════════ HEADER ════════ -->
+    <div class="header">
+      <div class="header-left">
+        <h1>JIBON MADBER</h1>
+        <div class="title-role">Full Stack MERN Developer & Cyber Security Expert</div>
+        <div class="status"><span class="status-dot"></span> Available for Projects</div>
+      </div>
+      <div class="header-right">
+        <div><span class="label">EMAIL</span> <a href="mailto:zibonmadbor@gmail.com">zibonmadbor@gmail.com</a></div>
+        <div><span class="label">PHONE</span> +880 1751 602201</div>
+        <div><span class="label">LOCATION</span> Bangladesh 🇧🇩</div>
+        <div><span class="label">GITHUB</span> <a href="https://github.com/zibonmadbor" target="_blank">github.com/zibonmadbor</a></div>
+        <div><span class="label">LINKEDIN</span> <a href="https://www.linkedin.com/in/jibonmadbercc/" target="_blank">linkedin.com/in/jibonmadbercc</a></div>
+      </div>
+    </div>
+
+    <!-- ════════ CONTENT ════════ -->
+    <div class="content">
+
+      <!-- ──── Main Column ──── -->
+      <div class="main">
+
+        <!-- Summary -->
+        <div class="summary">
+          Passionate developer bridging web development and cyber security. With expertise in the MERN stack and ethical hacking, I build secure, scalable applications from the ground up — because security isn't an afterthought, it's a foundation. 3+ years of experience, 20+ projects delivered, 10+ happy clients.
+        </div>
+
+        <!-- Experience -->
+        <div class="section-heading"><span class="bracket">&lt;</span>Experience<span class="bracket">/&gt;</span><span class="line"></span></div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">MERN Stack Developer</div>
+            <div class="entry-period">2023 – Present</div>
+          </div>
+          <div class="entry-org">Freelance / Remote</div>
+          <div class="entry-desc">
+            <ul>
+              <li>Built 50+ production-grade full-stack web applications for clients using MongoDB, Express.js, React, and Node.js</li>
+              <li>Implemented JWT authentication, role-based access control, and SSLCommerz payment integration</li>
+              <li>Delivered real-time dashboards with analytics, chart visualizations, and full CRUD operations</li>
+              <li>Focused on security-first architecture, performance optimization, and responsive design</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Cyber Security Trainee</div>
+            <div class="entry-period">2023 – 2024</div>
+          </div>
+          <div class="entry-org">Self-Directed / Online Platforms</div>
+          <div class="entry-desc">
+            <ul>
+              <li>Completed intensive training in ethical hacking, web application security, and penetration testing</li>
+              <li>Practiced on TryHackMe, HackTheBox, and other CTF platforms (50+ challenges solved)</li>
+              <li>Conducted 10+ security audits covering OWASP Top 10 vulnerabilities</li>
+              <li>Proficient with Burp Suite, Nmap, Metasploit, SQLMap, and Wireshark</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section-heading section-heading-cyan"><span class="bracket">&lt;</span>Education<span class="bracket">/&gt;</span><span class="line"></span></div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">BSc in Computer Science & Engineering</div>
+            <div class="entry-period">2022 – Present</div>
+          </div>
+          <div class="entry-org">Green University of Bangladesh</div>
+          <div class="entry-desc">
+            <ul>
+              <li>Core CS fundamentals: algorithms, data structures, networking, and software engineering</li>
+              <li>Specializing in web development and cyber security</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section-heading section-heading-purple"><span class="bracket">&lt;</span>Projects<span class="bracket">/&gt;</span><span class="line"></span></div>
+
+        <div class="project">
+          <div class="project-title">E-Commerce MERN Platform</div>
+          <div class="project-desc">Feature-rich e-commerce with product management, cart, SSLCommerz payment, JWT auth, and admin panel.</div>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">Redux</span><span class="tag">SSLCommerz</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">Admin Panel Dashboard</div>
+          <div class="project-desc">Real-time admin dashboard with user analytics, chart visualizations, RBAC, and full CRUD. Dark-themed responsive design.</div>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">Recharts</span><span class="tag">Node.js</span><span class="tag">JWT</span><span class="tag">TailwindCSS</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">Cyber Security Audit Tool</div>
+          <div class="project-desc">Automated vulnerability scanning with OWASP checks and PDF security report generation.</div>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">React</span><span class="tag">OWASP</span><span class="tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">Penetration Testing Report System</div>
+          <div class="project-desc">Structured pentest reports with severity ratings, CVSS scores, and collaborative team features.</div>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">MongoDB</span><span class="tag">Express</span><span class="tag">CVSS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ──── Sidebar ──── -->
+      <div class="sidebar">
+
+        <!-- Skills: MERN -->
+        <section>
+          <div class="skill-category skill-category-green">MERN Stack</div>
+          <div class="skill-item"><span class="skill-name">React.js</span><div class="skill-bar-track"><div class="skill-bar-fill fill-green" style="width:92%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">MongoDB</span><div class="skill-bar-track"><div class="skill-bar-fill fill-green" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Node.js</span><div class="skill-bar-track"><div class="skill-bar-fill fill-green" style="width:87%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Express.js</span><div class="skill-bar-track"><div class="skill-bar-fill fill-green" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">TypeScript</span><div class="skill-bar-track"><div class="skill-bar-fill fill-green" style="width:80%"></div></div></div>
+        </section>
+
+        <!-- Skills: Cyber Security -->
+        <section>
+          <div class="skill-category skill-category-cyan">Cyber Security</div>
+          <div class="skill-item"><span class="skill-name">OWASP Top 10</span><div class="skill-bar-track"><div class="skill-bar-fill fill-cyan" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Web Security</span><div class="skill-bar-track"><div class="skill-bar-fill fill-cyan" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Ethical Hacking</span><div class="skill-bar-track"><div class="skill-bar-fill fill-cyan" style="width:82%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Pen Testing</span><div class="skill-bar-track"><div class="skill-bar-fill fill-cyan" style="width:78%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Network Sec.</span><div class="skill-bar-track"><div class="skill-bar-fill fill-cyan" style="width:75%"></div></div></div>
+        </section>
+
+        <!-- Skills: Tools -->
+        <section>
+          <div class="skill-category skill-category-purple">Tools & DevOps</div>
+          <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="skill-bar-track"><div class="skill-bar-fill fill-purple" style="width:92%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Linux / Kali</span><div class="skill-bar-track"><div class="skill-bar-fill fill-purple" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Burp Suite</span><div class="skill-bar-track"><div class="skill-bar-fill fill-purple" style="width:80%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Nmap / Postman</span><div class="skill-bar-track"><div class="skill-bar-fill fill-purple" style="width:78%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Docker</span><div class="skill-bar-track"><div class="skill-bar-fill fill-purple" style="width:70%"></div></div></div>
+        </section>
+
+        <!-- More Technologies -->
+        <section>
+          <div class="section-heading" style="font-size:10px; margin-bottom:10px;">Technologies<span class="line"></span></div>
+          <div class="tech-list">
+            <span class="tech-badge">REST API</span>
+            <span class="tech-badge">GraphQL</span>
+            <span class="tech-badge">JWT Auth</span>
+            <span class="tech-badge">Redux</span>
+            <span class="tech-badge">Metasploit</span>
+            <span class="tech-badge">SQLMap</span>
+            <span class="tech-badge">Wireshark</span>
+            <span class="tech-badge">Nginx</span>
+            <span class="tech-badge">Redis</span>
+            <span class="tech-badge">AWS</span>
+            <span class="tech-badge">Figma</span>
+          </div>
+        </section>
+
+        <!-- Services -->
+        <section>
+          <div class="section-heading section-heading-cyan" style="font-size:10px; margin-bottom:10px;">Services<span class="line"></span></div>
+          <div class="service-item"><span class="service-dot" style="background:var(--green)"></span>Web Development</div>
+          <div class="service-item"><span class="service-dot" style="background:var(--cyan)"></span>MERN Stack Apps</div>
+          <div class="service-item"><span class="service-dot" style="background:var(--purple)"></span>Security Consulting</div>
+          <div class="service-item"><span class="service-dot" style="background:var(--green)"></span>Security Audits</div>
+          <div class="service-item"><span class="service-dot" style="background:var(--cyan)"></span>Bug Fixing</div>
+          <div class="service-item"><span class="service-dot" style="background:var(--purple)"></span>Penetration Testing</div>
+        </section>
+
+        <!-- Languages -->
+        <section>
+          <div class="section-heading section-heading-purple" style="font-size:10px; margin-bottom:10px;">Languages<span class="line"></span></div>
+          <div class="info-item"><span class="info-bullet">▹</span> Bengali — Native</div>
+          <div class="info-item"><span class="info-bullet">▹</span> English — Professional</div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="cv-footer">
+      © 2025 Jibon Madber &nbsp;|&nbsp; zibonmadbor@gmail.com &nbsp;|&nbsp; Open to Remote Work Worldwide
+    </div>
+  </div>
+
+  <!-- html2pdf.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
+  <script>
+    function generatePDF() {
+      const btn = document.getElementById('downloadBtn');
+      btn.disabled = true;
+      btn.textContent = '⏳ Generating...';
+
+      const element = document.getElementById('cvContent');
+      const opt = {
+        margin: 0,
+        filename: 'Jibon_Madber_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#080e1a',
+          logging: false,
+        },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        btn.disabled = false;
+        btn.textContent = '✓ Downloaded!';
+        setTimeout(() => { btn.textContent = '⬇ Download PDF'; }, 2500);
+      });
+    }
+  </script>
+</body>
+</html>
