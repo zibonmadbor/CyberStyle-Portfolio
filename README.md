@@ -7,6 +7,8 @@
   </h1>
   <p><b>A highly immersive, cyberpunk-themed personal portfolio built for the future.</b></p>
   
+  <h3>🔗 <a href="https://zibonmadbor.netlify.app/" target="_blank">View Live Demo</a></h3>
+
   <p>
     <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" /></a>
     <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" /></a>
