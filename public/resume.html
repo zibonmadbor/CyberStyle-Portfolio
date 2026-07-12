@@ -387,34 +387,47 @@
     function generatePDF() {
       const btn = document.getElementById('downloadBtn');
       const bar = document.getElementById('downloadBar');
+      const element = document.getElementById('cvContent');
+
       btn.disabled = true;
       btn.textContent = 'Generating...';
-
       bar.style.display = 'none';
 
-      const element = document.getElementById('cvContent');
+      // Temporarily remove centering margins and reset page coordinates for clean top-left canvas capture
+      const originalMargin = element.style.margin;
+      const originalPosition = element.style.position;
+      element.style.margin = '0';
+      element.style.position = 'relative';
+
       const opt = {
         margin: [0, 0, 0, 0],
         filename: 'Jibon_Madber_Resume.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
-          scale: 2,
+          scale: 2.5,
           useCORS: true,
           backgroundColor: '#ffffff',
           logging: false,
-          windowWidth: element.scrollWidth,
-          windowHeight: element.scrollHeight,
+          scrollX: 0,
+          scrollY: 0,
+          x: 0,
+          y: 0,
+          windowWidth: 794, /* Locks capturing window width to standard A4 (210mm) */
+          windowHeight: 1123 /* Locks capturing window height to standard A4 (297mm) */
         },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
 
       html2pdf().set(opt).from(element).save().then(() => {
+        element.style.margin = originalMargin;
+        element.style.position = originalPosition;
         bar.style.display = 'flex';
         btn.disabled = false;
         btn.textContent = 'Downloaded!';
         setTimeout(() => { btn.textContent = 'Download PDF'; }, 2500);
       }).catch(() => {
+        element.style.margin = originalMargin;
+        element.style.position = originalPosition;
         bar.style.display = 'flex';
         btn.disabled = false;
         btn.textContent = 'Download PDF';
