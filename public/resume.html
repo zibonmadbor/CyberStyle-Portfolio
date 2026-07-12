@@ -8,23 +8,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ─── ATS-Friendly Reset ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', Arial, Helvetica, sans-serif;
       background: #f4f5f7;
       color: #1a1a2e;
-      line-height: 1.6;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
     /* ─── Download bar ─── */
     .download-bar {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       background: #1a1a2e;
       padding: 12px 24px;
@@ -56,179 +53,174 @@
     .btn-download:hover { background: #1d4ed8; box-shadow: 0 4px 14px rgba(37,99,235,0.4); }
     .btn-download:disabled { opacity: 0.5; cursor: wait; }
 
-    /* ─── Resume page ─── */
+    /* ─── Resume container ─── */
     .resume-page {
-      max-width: 800px;
+      width: 210mm;
+      min-height: 297mm;
       margin: 0 auto;
-      padding: 0;
       background: #ffffff;
       box-shadow: 0 1px 20px rgba(0,0,0,0.08);
     }
-
     .resume-inner {
-      padding: 48px 56px;
+      padding: 36px 44px 28px 44px;
     }
 
     /* ─── Header ─── */
     .header {
-      margin-bottom: 28px;
-      padding-bottom: 22px;
-      border-bottom: 2px solid #2563eb;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 2.5px solid #2563eb;
     }
     .header h1 {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 700;
       color: #1a1a2e;
-      letter-spacing: -0.01em;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .header .subtitle {
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 13px;
+      font-weight: 600;
       color: #2563eb;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 20px;
-      font-size: 12.5px;
+      font-size: 11px;
       color: #4a4e69;
+      line-height: 1.7;
     }
     .contact-row a {
       color: #2563eb;
       text-decoration: none;
     }
-    .contact-row .sep {
-      color: #c8cad4;
-    }
 
     /* ─── Section ─── */
     .section {
-      margin-bottom: 24px;
+      margin-bottom: 14px;
+      page-break-inside: avoid;
     }
     .section-title {
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #1a1a2e;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #e2e4ea;
-      margin-bottom: 14px;
+      color: #2563eb;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #dde0e8;
+      margin-bottom: 8px;
     }
 
-    /* ─── Entry (Experience / Education) ─── */
+    /* ─── Entry ─── */
     .entry {
-      margin-bottom: 18px;
+      margin-bottom: 12px;
+      page-break-inside: avoid;
     }
     .entry-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
     .entry-role {
-      font-size: 14.5px;
+      font-size: 13px;
       font-weight: 700;
       color: #1a1a2e;
     }
     .entry-date {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
       color: #6b7280;
       white-space: nowrap;
     }
     .entry-company {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      color: #2563eb;
-      margin-bottom: 6px;
+      color: #4a4e69;
+      font-style: italic;
+      margin-bottom: 4px;
     }
     .entry ul {
-      padding-left: 18px;
+      padding-left: 16px;
       margin: 0;
     }
     .entry li {
-      font-size: 13px;
+      font-size: 11.5px;
       color: #374151;
-      margin-bottom: 4px;
-      line-height: 1.55;
+      margin-bottom: 2px;
+      line-height: 1.45;
     }
 
     /* ─── Skills ─── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px 32px;
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
     }
-    .skill-group-label {
-      font-size: 12.5px;
+    .skills-table td {
+      vertical-align: top;
+      padding: 3px 8px 3px 0;
+      font-size: 11.5px;
+      color: #374151;
+      line-height: 1.5;
+    }
+    .skills-table .sk-label {
       font-weight: 700;
       color: #1a1a2e;
-      margin-bottom: 4px;
-    }
-    .skill-group-items {
-      font-size: 13px;
-      color: #374151;
-      line-height: 1.6;
+      white-space: nowrap;
+      width: 140px;
     }
 
     /* ─── Projects ─── */
     .project {
-      margin-bottom: 14px;
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+    .project-header {
+      font-size: 12px;
+      margin-bottom: 1px;
     }
     .project-name {
-      font-size: 13.5px;
       font-weight: 700;
       color: #1a1a2e;
     }
     .project-tech {
-      font-size: 11.5px;
-      font-weight: 500;
-      color: #2563eb;
+      font-weight: 400;
+      color: #6b7280;
+      font-style: italic;
     }
     .project-desc {
-      font-size: 13px;
+      font-size: 11.5px;
       color: #374151;
-      margin-top: 2px;
-      line-height: 1.55;
+      line-height: 1.45;
     }
 
-    /* ─── Certifications / Extras ─── */
+    /* ─── Extra lists ─── */
     .extra-list {
-      padding-left: 18px;
+      padding-left: 16px;
       margin: 0;
     }
     .extra-list li {
-      font-size: 13px;
+      font-size: 11.5px;
       color: #374151;
-      margin-bottom: 4px;
-      line-height: 1.55;
+      margin-bottom: 2px;
+      line-height: 1.45;
+    }
+    .extra-list li strong {
+      color: #1a1a2e;
     }
 
     /* ─── Print / PDF ─── */
     @media print {
       .download-bar { display: none !important; }
       body { background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .resume-page { box-shadow: none; margin: 0; max-width: none; }
-      .resume-inner { padding: 32px 40px; }
-    }
-
-    @media screen and (max-width: 640px) {
-      .resume-inner { padding: 28px 20px; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .contact-row { flex-direction: column; gap: 4px; }
-      .entry-top { flex-direction: column; }
+      .resume-page { box-shadow: none; margin: 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Download bar -->
+  <!-- Download bar (hidden in PDF) -->
   <div class="download-bar" id="downloadBar">
-    <span>📄 Jibon Madber — Professional Resume</span>
-    <button class="btn-download" id="downloadBtn" onclick="generatePDF()">⬇ Download PDF</button>
+    <span>Jibon Madber — Professional Resume</span>
+    <button class="btn-download" id="downloadBtn" onclick="generatePDF()">Download PDF</button>
   </div>
 
   <div style="height: 54px;"></div>
@@ -236,150 +228,144 @@
   <div class="resume-page" id="cvContent">
     <div class="resume-inner">
 
-      <!-- ═══ HEADER ═══ -->
+      <!-- HEADER -->
       <div class="header">
-        <h1>Jibon Madber</h1>
-        <div class="subtitle">Full Stack MERN Developer &amp; Cyber Security Specialist</div>
+        <h1>JIBON MADBER</h1>
+        <div class="subtitle">Full Stack MERN Developer | Cyber Security Specialist</div>
         <div class="contact-row">
-          <span>📧 <a href="mailto:zibonmadbor@gmail.com">zibonmadbor@gmail.com</a></span>
-          <span class="sep">|</span>
-          <span>📞 +880 1751 602201</span>
-          <span class="sep">|</span>
-          <span>📍 Dhaka, Bangladesh</span>
-          <span class="sep">|</span>
-          <span>🔗 <a href="https://www.linkedin.com/in/jibonmadbercc/" target="_blank">linkedin.com/in/jibonmadbercc</a></span>
-          <span class="sep">|</span>
-          <span>💻 <a href="https://github.com/zibonmadbor" target="_blank">github.com/zibonmadbor</a></span>
-          <span class="sep">|</span>
-          <span>🌐 <a href="https://zibonmadbor.netlify.app/" target="_blank">zibonmadbor.netlify.app</a></span>
+          <a href="mailto:zibonmadbor@gmail.com">zibonmadbor@gmail.com</a> &nbsp;|&nbsp;
+          +880 1751 602201 &nbsp;|&nbsp;
+          Dhaka, Bangladesh &nbsp;|&nbsp;
+          <a href="https://www.linkedin.com/in/jibonmadbercc/" target="_blank">linkedin.com/in/jibonmadbercc</a> &nbsp;|&nbsp;
+          <a href="https://github.com/zibonmadbor" target="_blank">github.com/zibonmadbor</a> &nbsp;|&nbsp;
+          <a href="https://zibonmadbor.netlify.app/" target="_blank">zibonmadbor.netlify.app</a>
         </div>
       </div>
 
-      <!-- ═══ PROFESSIONAL SUMMARY ═══ -->
+      <!-- PROFESSIONAL SUMMARY -->
       <div class="section">
         <div class="section-title">Professional Summary</div>
-        <p style="font-size:13px; color:#374151; line-height:1.65;">
-          Results-driven Full Stack Web Developer with 3+ years of hands-on experience building production-grade applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). Complementary expertise in Cyber Security including penetration testing, vulnerability assessment, and OWASP Top 10 remediation. Delivered 50+ web applications, conducted 10+ security audits, and maintained a strong track record of building secure, scalable, and high-performance solutions. Seeking a challenging role to leverage full-stack development and security expertise in a collaborative engineering environment.
+        <p style="font-size:11.5px; color:#374151; line-height:1.5;">
+          Results-driven Full Stack Web Developer with 3+ years of hands-on experience building production-grade applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). Complementary expertise in Cyber Security including penetration testing, vulnerability assessment, and OWASP Top 10 remediation. Delivered 50+ web applications, conducted 10+ security audits, and maintained a strong track record of building secure, scalable, and high-performance solutions.
         </p>
       </div>
 
-      <!-- ═══ TECHNICAL SKILLS ═══ -->
+      <!-- TECHNICAL SKILLS -->
       <div class="section">
         <div class="section-title">Technical Skills</div>
-        <div class="skills-grid">
-          <div>
-            <div class="skill-group-label">Frontend Development</div>
-            <div class="skill-group-items">React.js, Next.js, TypeScript, JavaScript (ES6+), Redux, Tailwind CSS, HTML5, CSS3, Responsive Design, Framer Motion</div>
-          </div>
-          <div>
-            <div class="skill-group-label">Backend Development</div>
-            <div class="skill-group-items">Node.js, Express.js, REST API, GraphQL, JWT Authentication, OAuth 2.0, Role-Based Access Control (RBAC), Middleware</div>
-          </div>
-          <div>
-            <div class="skill-group-label">Database &amp; DevOps</div>
-            <div class="skill-group-items">MongoDB, Mongoose, Redis, Firebase, PostgreSQL, Docker, Nginx, CI/CD, Git, GitHub, Linux, AWS (EC2, S3)</div>
-          </div>
-          <div>
-            <div class="skill-group-label">Cyber Security</div>
-            <div class="skill-group-items">Penetration Testing, Vulnerability Assessment, OWASP Top 10, Burp Suite, Nmap, Metasploit, SQLMap, Wireshark, Kali Linux, Ethical Hacking</div>
-          </div>
-        </div>
+        <table class="skills-table">
+          <tr>
+            <td class="sk-label">Frontend:</td>
+            <td>React.js, Next.js, TypeScript, JavaScript (ES6+), Redux, Tailwind CSS, HTML5, CSS3, Framer Motion, Responsive Design</td>
+          </tr>
+          <tr>
+            <td class="sk-label">Backend:</td>
+            <td>Node.js, Express.js, REST API, GraphQL, JWT Authentication, OAuth 2.0, RBAC, Middleware Architecture</td>
+          </tr>
+          <tr>
+            <td class="sk-label">Database / DevOps:</td>
+            <td>MongoDB, Mongoose, Redis, Firebase, PostgreSQL, Docker, Nginx, CI/CD, Git, GitHub, Linux, AWS (EC2, S3)</td>
+          </tr>
+          <tr>
+            <td class="sk-label">Cyber Security:</td>
+            <td>Penetration Testing, Vulnerability Assessment, OWASP Top 10, Burp Suite, Nmap, Metasploit, SQLMap, Wireshark, Kali Linux</td>
+          </tr>
+        </table>
       </div>
 
-      <!-- ═══ PROFESSIONAL EXPERIENCE ═══ -->
+      <!-- PROFESSIONAL EXPERIENCE -->
       <div class="section">
         <div class="section-title">Professional Experience</div>
 
         <div class="entry">
           <div class="entry-top">
             <div class="entry-role">Full Stack MERN Developer</div>
-            <div class="entry-date">Jan 2023 – Present</div>
+            <div class="entry-date">Jan 2023 - Present</div>
           </div>
-          <div class="entry-company">Freelance &mdash; Remote</div>
+          <div class="entry-company">Freelance, Remote</div>
           <ul>
             <li>Architected and delivered 50+ production-grade full-stack web applications using MongoDB, Express.js, React, and Node.js for clients across e-commerce, SaaS, and education domains</li>
             <li>Implemented secure authentication systems with JWT tokens, OAuth 2.0, and role-based access control (RBAC), reducing unauthorized access incidents by 95%</li>
             <li>Integrated SSLCommerz and Stripe payment gateways, processing $100K+ in transactions with PCI-compliant security standards</li>
             <li>Built real-time admin dashboards with analytics, chart visualizations (Recharts), and full CRUD operations, improving client decision-making efficiency by 40%</li>
-            <li>Optimized application performance through code splitting, lazy loading, caching strategies, and database indexing, achieving Lighthouse scores above 90</li>
-            <li>Collaborated with cross-functional teams using Agile methodologies, Git version control, and CI/CD pipelines for seamless deployment</li>
+            <li>Optimized application performance through code splitting, lazy loading, and database indexing, achieving Lighthouse scores above 90</li>
+            <li>Collaborated with cross-functional teams using Agile methodologies, Git version control, and CI/CD pipelines</li>
           </ul>
         </div>
 
         <div class="entry">
           <div class="entry-top">
             <div class="entry-role">Cyber Security Analyst (Trainee)</div>
-            <div class="entry-date">Jun 2023 – Dec 2024</div>
+            <div class="entry-date">Jun 2023 - Dec 2024</div>
           </div>
-          <div class="entry-company">Self-Directed &amp; Online Platforms (TryHackMe, HackTheBox)</div>
+          <div class="entry-company">Self-Directed / TryHackMe, HackTheBox</div>
           <ul>
-            <li>Completed intensive training programs in ethical hacking, web application security, and network penetration testing across multiple industry-recognized platforms</li>
-            <li>Solved 50+ Capture The Flag (CTF) challenges on TryHackMe and HackTheBox, ranking in the top 10% of active participants</li>
-            <li>Conducted 10+ comprehensive security audits identifying OWASP Top 10 vulnerabilities including SQL Injection, XSS, CSRF, and Broken Authentication</li>
+            <li>Completed intensive training in ethical hacking, web application security, and network penetration testing</li>
+            <li>Solved 50+ CTF challenges on TryHackMe and HackTheBox, ranking in the top 10% of active participants</li>
+            <li>Conducted 10+ security audits identifying OWASP Top 10 vulnerabilities including SQL Injection, XSS, CSRF, and Broken Authentication</li>
             <li>Developed automated vulnerability scanning scripts using Python and Bash, reducing manual assessment time by 60%</li>
-            <li>Created detailed penetration testing reports with CVSS severity ratings, remediation recommendations, and risk mitigation strategies</li>
+            <li>Created detailed penetration testing reports with CVSS severity ratings and remediation recommendations</li>
           </ul>
         </div>
       </div>
 
-      <!-- ═══ KEY PROJECTS ═══ -->
+      <!-- KEY PROJECTS -->
       <div class="section">
         <div class="section-title">Key Projects</div>
 
         <div class="project">
-          <div><span class="project-name">E-Commerce MERN Platform</span> <span class="project-tech">— React, Node.js, MongoDB, Redux, SSLCommerz</span></div>
-          <div class="project-desc">Designed and developed a full-featured e-commerce platform with product catalog management, shopping cart, wishlist, order tracking, SSLCommerz payment integration, JWT authentication, and an admin dashboard for analytics and inventory management. Served 500+ active users.</div>
+          <div class="project-header"><span class="project-name">E-Commerce MERN Platform</span> <span class="project-tech">| React, Node.js, MongoDB, Redux, SSLCommerz</span></div>
+          <div class="project-desc">Full-featured e-commerce platform with product catalog, cart, order tracking, SSLCommerz payment, JWT auth, and admin dashboard. Served 500+ active users.</div>
         </div>
 
         <div class="project">
-          <div><span class="project-name">Admin Panel Dashboard</span> <span class="project-tech">— React, Recharts, Node.js, JWT, Tailwind CSS</span></div>
-          <div class="project-desc">Built a responsive, real-time admin dashboard featuring user analytics, revenue charts, RBAC with 4 permission levels, and full CRUD operations. Reduced admin task completion time by 35% compared to the client's legacy system.</div>
+          <div class="project-header"><span class="project-name">Real-Time Admin Dashboard</span> <span class="project-tech">| React, Recharts, Node.js, JWT, Tailwind CSS</span></div>
+          <div class="project-desc">Responsive admin dashboard with user analytics, revenue charts, 4-level RBAC, and full CRUD operations. Reduced admin task time by 35%.</div>
         </div>
 
         <div class="project">
-          <div><span class="project-name">Automated Security Audit Tool</span> <span class="project-tech">— Python, React, OWASP, Node.js</span></div>
-          <div class="project-desc">Engineered an automated vulnerability scanning tool that performs OWASP Top 10 compliance checks and generates comprehensive PDF security reports with risk scores, enabling clients to prioritize remediation efforts.</div>
+          <div class="project-header"><span class="project-name">Automated Security Audit Tool</span> <span class="project-tech">| Python, React, OWASP, Node.js</span></div>
+          <div class="project-desc">Vulnerability scanning tool performing OWASP Top 10 compliance checks with comprehensive PDF security report generation.</div>
         </div>
 
         <div class="project">
-          <div><span class="project-name">Penetration Testing Report System</span> <span class="project-tech">— React, MongoDB, Express, CVSS</span></div>
-          <div class="project-desc">Developed a collaborative pentest reporting platform supporting structured vulnerability documentation with CVSS 3.1 scoring, severity classification, evidence attachment, and team-based workflow management.</div>
+          <div class="project-header"><span class="project-name">Penetration Testing Report System</span> <span class="project-tech">| React, MongoDB, Express, CVSS</span></div>
+          <div class="project-desc">Collaborative pentest reporting platform with CVSS 3.1 scoring, severity classification, and team-based workflow management.</div>
         </div>
       </div>
 
-      <!-- ═══ EDUCATION ═══ -->
+      <!-- EDUCATION -->
       <div class="section">
         <div class="section-title">Education</div>
         <div class="entry">
           <div class="entry-top">
-            <div class="entry-role">Bachelor of Science in Computer Science &amp; Engineering (BSc CSE)</div>
-            <div class="entry-date">2022 – Present</div>
+            <div class="entry-role">Bachelor of Science in Computer Science & Engineering</div>
+            <div class="entry-date">2022 - Present</div>
           </div>
           <div class="entry-company">Green University of Bangladesh, Dhaka</div>
           <ul>
-            <li>Coursework: Data Structures &amp; Algorithms, Operating Systems, Computer Networks, Software Engineering, Database Management Systems, Web Development, Cyber Security Fundamentals</li>
+            <li>Coursework: Data Structures & Algorithms, Operating Systems, Computer Networks, Software Engineering, DBMS, Cyber Security</li>
             <li>Active member of the university Coding Club and Cyber Security Society</li>
           </ul>
         </div>
       </div>
 
-      <!-- ═══ CERTIFICATIONS & TRAINING ═══ -->
+      <!-- CERTIFICATIONS -->
       <div class="section">
-        <div class="section-title">Certifications &amp; Training</div>
+        <div class="section-title">Certifications & Training</div>
         <ul class="extra-list">
-          <li>TryHackMe — Offensive Pentesting Learning Path (50+ rooms completed, Top 10%)</li>
-          <li>HackTheBox — Active participant with 20+ machines pwned</li>
-          <li>OWASP Web Security Testing — Self-directed comprehensive training</li>
-          <li>Advanced MERN Stack Development — Online certification (Udemy / Coursera)</li>
+          <li>TryHackMe - Offensive Pentesting Learning Path (50+ rooms completed, Top 10%)</li>
+          <li>HackTheBox - Active participant with 20+ machines pwned</li>
+          <li>OWASP Web Security Testing - Self-directed comprehensive training</li>
+          <li>Advanced MERN Stack Development - Online certification</li>
         </ul>
       </div>
 
-      <!-- ═══ ADDITIONAL INFORMATION ═══ -->
+      <!-- ADDITIONAL -->
       <div class="section" style="margin-bottom:0;">
         <div class="section-title">Additional Information</div>
         <ul class="extra-list">
           <li><strong>Languages:</strong> Bengali (Native), English (Professional Working Proficiency)</li>
-          <li><strong>Portfolio:</strong> <a href="https://zibonmadbor.netlify.app/" style="color:#2563eb; text-decoration:none;">zibonmadbor.netlify.app</a></li>
           <li><strong>Availability:</strong> Open to full-time, contract, and remote opportunities worldwide</li>
           <li><strong>Interests:</strong> Open-source contribution, CTF competitions, security research, tech blogging</li>
         </ul>
@@ -388,17 +374,21 @@
     </div>
   </div>
 
-  <!-- html2pdf.js CDN -->
+  <!-- html2pdf.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
   <script>
     function generatePDF() {
       const btn = document.getElementById('downloadBtn');
+      const bar = document.getElementById('downloadBar');
       btn.disabled = true;
-      btn.textContent = '⏳ Generating...';
+      btn.textContent = 'Generating...';
+
+      // Hide download bar before capture
+      bar.style.display = 'none';
 
       const element = document.getElementById('cvContent');
       const opt = {
-        margin: 0,
+        margin: [0, 0, 0, 0],
         filename: 'Jibon_Madber_Resume.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
@@ -406,15 +396,22 @@
           useCORS: true,
           backgroundColor: '#ffffff',
           logging: false,
+          windowWidth: element.scrollWidth,
+          windowHeight: element.scrollHeight,
         },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
       };
 
       html2pdf().set(opt).from(element).save().then(() => {
+        bar.style.display = 'flex';
         btn.disabled = false;
-        btn.textContent = '✓ Downloaded!';
-        setTimeout(() => { btn.textContent = '⬇ Download PDF'; }, 2500);
+        btn.textContent = 'Downloaded!';
+        setTimeout(() => { btn.textContent = 'Download PDF'; }, 2500);
+      }).catch(() => {
+        bar.style.display = 'flex';
+        btn.disabled = false;
+        btn.textContent = 'Download PDF';
       });
     }
   </script>
