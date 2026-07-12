@@ -14,7 +14,7 @@
       font-family: 'Inter', Arial, Helvetica, sans-serif;
       background: #f4f5f7;
       color: #1a1a2e;
-      line-height: 1.5;
+      line-height: 1.35;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -24,7 +24,7 @@
       top: 0; left: 0; right: 0;
       z-index: 100;
       background: #1a1a2e;
-      padding: 12px 24px;
+      padding: 10px 24px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -32,62 +32,67 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
     .download-bar span {
-      font-size: 13px;
+      font-size: 12px;
       color: #a0a4b8;
       font-weight: 500;
     }
     .btn-download {
       font-family: 'Inter', Arial, sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 9px 28px;
+      padding: 7px 20px;
       border: none;
       background: #2563eb;
       color: #fff;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .btn-download:hover { background: #1d4ed8; box-shadow: 0 4px 14px rgba(37,99,235,0.4); }
+    .btn-download:hover { background: #1d4ed8; }
     .btn-download:disabled { opacity: 0.5; cursor: wait; }
 
     /* ─── Resume container ─── */
     .resume-page {
       width: 210mm;
-      min-height: 297mm;
+      height: 297mm;
       margin: 0 auto;
       background: #ffffff;
       box-shadow: 0 1px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
     }
     .resume-inner {
-      padding: 40px 48px 30px 48px;
+      padding: 24px 36px 20px 36px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* ─── Header ─── */
     .header {
-      margin-bottom: 20px;
-      padding-bottom: 14px;
-      border-bottom: 2.5px solid #2563eb;
-      text-align: left;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #2563eb;
     }
     .header h1 {
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 700;
       color: #1a1a2e;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
+      letter-spacing: -0.02em;
     }
     .header .subtitle {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 600;
       color: #2563eb;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
     .contact-row {
-      font-size: 11.5px;
+      font-size: 10.5px;
       color: #4a4e69;
-      line-height: 1.6;
+      line-height: 1.4;
     }
     .contact-row a {
       color: #2563eb;
@@ -96,88 +101,83 @@
 
     /* ─── Section ─── */
     .section {
-      margin-bottom: 18px;
-      page-break-inside: avoid;
+      margin-bottom: 11px;
     }
     .section-title {
-      font-size: 12px;
+      font-size: 10.5px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       color: #2563eb;
-      padding-bottom: 4px;
+      padding-bottom: 2px;
       border-bottom: 1px solid #dde0e8;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     /* ─── Entry ─── */
     .entry {
-      margin-bottom: 14px;
-      page-break-inside: avoid;
+      margin-bottom: 8px;
     }
     .entry-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1px;
     }
     .entry-role {
-      font-size: 13.5px;
+      font-size: 12px;
       font-weight: 700;
       color: #1a1a2e;
     }
     .entry-date {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
       color: #6b7280;
       white-space: nowrap;
       font-style: italic;
     }
     .entry-company {
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 600;
       color: #4a4e69;
-      margin-bottom: 6px;
+      margin-bottom: 3px;
     }
     .entry ul {
-      padding-left: 18px;
+      padding-left: 14px;
       margin: 0;
     }
     .entry li {
-      font-size: 11.5px;
+      font-size: 10.5px;
       color: #374151;
-      margin-bottom: 3px;
-      line-height: 1.5;
+      margin-bottom: 1.5px;
+      line-height: 1.4;
     }
 
     /* ─── Skills Table Layout ─── */
     .skills-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 6px;
     }
     .skills-table td {
       width: 50%;
       vertical-align: top;
-      padding: 6px 12px 6px 0;
-      font-size: 11.5px;
+      padding: 3px 10px 3px 0;
+      font-size: 10.5px;
       color: #374151;
-      line-height: 1.5;
+      line-height: 1.35;
     }
     .skills-table .sk-title {
       font-weight: 700;
       color: #1a1a2e;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     /* ─── Projects ─── */
     .project {
-      margin-bottom: 10px;
-      page-break-inside: avoid;
+      margin-bottom: 6px;
     }
     .project-header {
-      font-size: 12px;
-      margin-bottom: 2px;
+      font-size: 11.5px;
+      margin-bottom: 1px;
     }
     .project-name {
       font-weight: 700;
@@ -189,21 +189,21 @@
       font-style: italic;
     }
     .project-desc {
-      font-size: 11.5px;
+      font-size: 10.5px;
       color: #374151;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     /* ─── Extra lists ─── */
     .extra-list {
-      padding-left: 18px;
+      padding-left: 14px;
       margin: 0;
     }
     .extra-list li {
-      font-size: 11.5px;
+      font-size: 10.5px;
       color: #374151;
-      margin-bottom: 3px;
-      line-height: 1.5;
+      margin-bottom: 1.5px;
+      line-height: 1.4;
     }
 
     /* ─── Print / PDF ─── */
@@ -222,151 +222,153 @@
     <button class="btn-download" id="downloadBtn" onclick="generatePDF()">Download PDF</button>
   </div>
 
-  <div style="height: 54px;"></div>
+  <div style="height: 48px;"></div>
 
   <div class="resume-page" id="cvContent">
     <div class="resume-inner">
 
-      <!-- HEADER -->
-      <div class="header">
-        <h1>Jibon Madber</h1>
-        <div class="subtitle">Full Stack MERN Developer &amp; Cyber Security Specialist</div>
-        <div class="contact-row">
-          <a href="mailto:zibonmadbor@gmail.com">zibonmadbor@gmail.com</a> &nbsp;|&nbsp;
-          +880 1751 602201 &nbsp;|&nbsp;
-          Dhaka, Bangladesh<br />
-          <a href="https://linkedin.com/in/jibonmadbercc" target="_blank">linkedin.com/in/jibonmadbercc</a> &nbsp;|&nbsp;
-          <a href="https://github.com/zibonmadbor" target="_blank">github.com/zibonmadbor</a> &nbsp;|&nbsp;
-          <a href="https://zibonmadbor.netlify.app/" target="_blank">zibonmadbor.netlify.app</a>
-        </div>
-      </div>
-
-      <!-- PROFESSIONAL SUMMARY -->
-      <div class="section">
-        <div class="section-title">Professional Summary</div>
-        <p style="font-size:11.5px; color:#374151; line-height:1.5;">
-          Results-driven Full Stack Web Developer with 3+ years of hands-on experience building production-grade applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). Complementary expertise in Cyber Security including penetration testing, vulnerability assessment, and OWASP Top 10 remediation. Delivered 50+ web applications, conducted 10+ security audits, and maintained a strong track record of building secure, scalable, and high-performance solutions.
-        </p>
-      </div>
-
-      <!-- TECHNICAL SKILLS -->
-      <div class="section">
-        <div class="section-title">Technical Skills</div>
-        <table class="skills-table">
-          <tr>
-            <td>
-              <div class="sk-title">Frontend Development</div>
-              React.js, Next.js, TypeScript, JavaScript (ES6+), Redux, Tailwind CSS, HTML5, CSS3, Responsive Design, Framer Motion
-            </td>
-            <td>
-              <div class="sk-title">Backend Development</div>
-              Node.js, Express.js, REST API, GraphQL, JWT Authentication, OAuth 2.0, Role-Based Access Control (RBAC), Middleware
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="sk-title">Database &amp; DevOps</div>
-              MongoDB, Mongoose, Redis, Firebase, PostgreSQL, Docker, Nginx, CI/CD, Git, GitHub, Linux, AWS (EC2, S3)
-            </td>
-            <td>
-              <div class="sk-title">Cyber Security</div>
-              Penetration Testing, Vulnerability Assessment, OWASP Top 10, Burp Suite, Nmap, Metasploit, SQLMap, Wireshark, Kali Linux, Ethical Hacking
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- PROFESSIONAL EXPERIENCE -->
-      <div class="section">
-        <div class="section-title">Professional Experience</div>
-
-        <div class="entry">
-          <div class="entry-top">
-            <div class="entry-role">Full Stack MERN Developer</div>
-            <div class="entry-date">Jan 2023 – Present</div>
+      <div>
+        <!-- HEADER -->
+        <div class="header">
+          <h1>Jibon Madber</h1>
+          <div class="subtitle">Full Stack MERN Developer &amp; Cyber Security Specialist</div>
+          <div class="contact-row">
+            <a href="mailto:zibonmadbor@gmail.com">zibonmadbor@gmail.com</a> &nbsp;|&nbsp;
+            +880 1751 602201 &nbsp;|&nbsp;
+            Dhaka, Bangladesh &nbsp;|&nbsp;
+            <a href="https://linkedin.com/in/jibonmadbercc" target="_blank">linkedin.com/in/jibonmadbercc</a> &nbsp;|&nbsp;
+            <a href="https://github.com/zibonmadbor" target="_blank">github.com/zibonmadbor</a> &nbsp;|&nbsp;
+            <a href="https://zibonmadbor.netlify.app/" target="_blank">zibonmadbor.netlify.app</a>
           </div>
-          <div class="entry-company">Freelance — Remote</div>
-          <ul>
-            <li>Architected and delivered 50+ production-grade full-stack web applications using MongoDB, Express.js, React, and Node.js for clients across e-commerce, SaaS, and education domains</li>
-            <li>Implemented secure authentication systems with JWT tokens, OAuth 2.0, and role-based access control (RBAC), reducing unauthorized access incidents by 95%</li>
-            <li>Integrated SSLCommerz and Stripe payment gateways, processing $100K+ in transactions with PCI-compliant security standards</li>
-            <li>Built real-time admin dashboards with analytics, chart visualizations (Recharts), and full CRUD operations, improving client decision-making efficiency by 40%</li>
-            <li>Optimized application performance through code splitting, lazy loading, caching strategies, and database indexing, achieving Lighthouse scores above 90</li>
-            <li>Collaborated with cross-functional teams using Agile methodologies, Git version control, and CI/CD pipelines for seamless deployment</li>
-          </ul>
         </div>
 
-        <div class="entry">
-          <div class="entry-top">
-            <div class="entry-role">Cyber Security Analyst (Trainee)</div>
-            <div class="entry-date">Jun 2023 – Dec 2024</div>
-          </div>
-          <div class="entry-company">Self-Directed &amp; Online Platforms (TryHackMe, HackTheBox)</div>
-          <ul>
-            <li>Completed intensive training programs in ethical hacking, web application security, and network penetration testing across multiple industry-recognized platforms</li>
-            <li>Solved 50+ Capture The Flag (CTF) challenges on TryHackMe and HackTheBox, ranking in the top 10% of active participants</li>
-            <li>Conducted 10+ comprehensive security audits identifying OWASP Top 10 vulnerabilities including SQL Injection, XSS, CSRF, and Broken Authentication</li>
-            <li>Developed automated vulnerability scanning scripts using Python and Bash, reducing manual assessment time by 60%</li>
-            <li>Created detailed penetration testing reports with CVSS severity ratings, remediation recommendations, and risk mitigation strategies</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- KEY PROJECTS -->
-      <div class="section">
-        <div class="section-title">Key Projects</div>
-
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">E-Commerce MERN Platform</span>
-            <span class="project-tech">— React, Node.js, MongoDB, Redux, SSLCommerz</span>
-          </div>
-          <div class="project-desc">Designed and developed a full-featured e-commerce platform with product catalog management, shopping cart, wishlist, order tracking, SSLCommerz payment integration, JWT authentication, and an admin dashboard for analytics and inventory management. Served 500+ active users.</div>
+        <!-- PROFESSIONAL SUMMARY -->
+        <div class="section">
+          <div class="section-title">Professional Summary</div>
+          <p style="font-size:10.5px; color:#374151; line-height:1.45;">
+            Results-driven Full Stack Web Developer with 3+ years of hands-on experience building production-grade applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). Complementary expertise in Cyber Security including penetration testing, vulnerability assessment, and OWASP Top 10 remediation. Delivered 50+ web applications, conducted 10+ security audits, and maintained a strong track record of building secure, scalable, and high-performance solutions.
+          </p>
         </div>
 
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">Admin Panel Dashboard</span>
-            <span class="project-tech">— React, Recharts, Node.js, JWT, Tailwind CSS</span>
-          </div>
-          <div class="project-desc">Built a responsive, real-time admin dashboard featuring user analytics, revenue charts, RBAC with 4 permission levels, and full CRUD operations. Reduced admin task completion time by 35% compared to the client's legacy system.</div>
+        <!-- TECHNICAL SKILLS -->
+        <div class="section">
+          <div class="section-title">Technical Skills</div>
+          <table class="skills-table">
+            <tr>
+              <td>
+                <div class="sk-title">Frontend Development</div>
+                React.js, Next.js, TypeScript, JavaScript (ES6+), Redux, Tailwind CSS, HTML5, CSS3, Responsive Design, Framer Motion
+              </td>
+              <td>
+                <div class="sk-title">Backend Development</div>
+                Node.js, Express.js, REST API, GraphQL, JWT Authentication, OAuth 2.0, Role-Based Access Control (RBAC), Middleware
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="sk-title">Database &amp; DevOps</div>
+                MongoDB, Mongoose, Redis, Firebase, PostgreSQL, Docker, Nginx, CI/CD, Git, GitHub, Linux, AWS (EC2, S3)
+              </td>
+              <td>
+                <div class="sk-title">Cyber Security</div>
+                Penetration Testing, Vulnerability Assessment, OWASP Top 10, Burp Suite, Nmap, Metasploit, SQLMap, Wireshark, Kali Linux, Ethical Hacking
+              </td>
+            </tr>
+          </table>
         </div>
 
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">Automated Security Audit Tool</span>
-            <span class="project-tech">— Python, React, OWASP, Node.js</span>
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <div class="section">
+          <div class="section-title">Professional Experience</div>
+
+          <div class="entry">
+            <div class="entry-top">
+              <div class="entry-role">Full Stack MERN Developer</div>
+              <div class="entry-date">Jan 2023 – Present</div>
+            </div>
+            <div class="entry-company">Freelance — Remote</div>
+            <ul>
+              <li>Architected and delivered 50+ production-grade full-stack web applications using MongoDB, Express.js, React, and Node.js for clients across e-commerce, SaaS, and education domains</li>
+              <li>Implemented secure authentication systems with JWT tokens, OAuth 2.0, and role-based access control (RBAC), reducing unauthorized access incidents by 95%</li>
+              <li>Integrated SSLCommerz and Stripe payment gateways, processing $100K+ in transactions with PCI-compliant security standards</li>
+              <li>Built real-time admin dashboards with analytics, chart visualizations (Recharts), and full CRUD operations, improving client decision-making efficiency by 40%</li>
+              <li>Optimized application performance through code splitting, lazy loading, caching strategies, and database indexing, achieving Lighthouse scores above 90</li>
+              <li>Collaborated with cross-functional teams using Agile methodologies, Git version control, and CI/CD pipelines for seamless deployment</li>
+            </ul>
           </div>
-          <div class="project-desc">Engineered an automated vulnerability scanning tool that performs OWASP Top 10 compliance checks and generates comprehensive PDF security reports with risk scores, enabling clients to prioritize remediation efforts.</div>
+
+          <div class="entry">
+            <div class="entry-top">
+              <div class="entry-role">Cyber Security Analyst (Trainee)</div>
+              <div class="entry-date">Jun 2023 – Dec 2024</div>
+            </div>
+            <div class="entry-company">Self-Directed &amp; Online Platforms (TryHackMe, HackTheBox)</div>
+            <ul>
+              <li>Completed intensive training programs in ethical hacking, web application security, and network penetration testing across multiple industry-recognized platforms</li>
+              <li>Solved 50+ Capture The Flag (CTF) challenges on TryHackMe and HackTheBox, ranking in the top 10% of active participants</li>
+              <li>Conducted 10+ comprehensive security audits identifying OWASP Top 10 vulnerabilities including SQL Injection, XSS, CSRF, and Broken Authentication</li>
+              <li>Developed automated vulnerability scanning scripts using Python and Bash, reducing manual assessment time by 60%</li>
+              <li>Created detailed penetration testing reports with CVSS severity ratings, remediation recommendations, and risk mitigation strategies</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">Penetration Testing Report System</span>
-            <span class="project-tech">— React, MongoDB, Express, CVSS</span>
-          </div>
-          <div class="project-desc">Developed a collaborative pentest reporting platform supporting structured vulnerability documentation with CVSS 3.1 scoring, severity classification, evidence attachment, and team-based workflow management.</div>
-        </div>
-      </div>
+        <!-- KEY PROJECTS -->
+        <div class="section">
+          <div class="section-title">Key Projects</div>
 
-      <!-- EDUCATION -->
-      <div class="section">
-        <div class="section-title">Education</div>
-        <div class="entry" style="margin-bottom: 0;">
-          <div class="entry-top">
-            <div class="entry-role">Bachelor of Science in Computer Science &amp; Engineering (BSc CSE)</div>
-            <div class="entry-date">2022 – Present</div>
+          <div class="project">
+            <div class="project-header">
+              <span class="project-name">E-Commerce MERN Platform</span>
+              <span class="project-tech">— React, Node.js, MongoDB, Redux, SSLCommerz</span>
+            </div>
+            <div class="project-desc">Designed and developed a full-featured e-commerce platform with product catalog management, shopping cart, wishlist, order tracking, SSLCommerz payment integration, JWT authentication, and an admin dashboard for analytics and inventory management. Served 500+ active users.</div>
           </div>
-          <div class="entry-company">Green University of Bangladesh, Dhaka</div>
-          <ul>
-            <li>Coursework: Data Structures &amp; Algorithms, Operating Systems, Computer Networks, Software Engineering, Database Management Systems, Web Development, Cyber Security Fundamentals</li>
-            <li>Active member of the university Coding Club and Cyber Security Society</li>
-          </ul>
+
+          <div class="project">
+            <div class="project-header">
+              <span class="project-name">Admin Panel Dashboard</span>
+              <span class="project-tech">— React, Recharts, Node.js, JWT, Tailwind CSS</span>
+            </div>
+            <div class="project-desc">Built a responsive, real-time admin dashboard featuring user analytics, revenue charts, RBAC with 4 permission levels, and full CRUD operations. Reduced admin task completion time by 35% compared to the client's legacy system.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-header">
+              <span class="project-name">Automated Security Audit Tool</span>
+              <span class="project-tech">— Python, React, OWASP, Node.js</span>
+            </div>
+            <div class="project-desc">Engineered an automated vulnerability scanning tool that performs OWASP Top 10 compliance checks and generates comprehensive PDF security reports with risk scores, enabling clients to prioritize remediation efforts.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-header">
+              <span class="project-name">Penetration Testing Report System</span>
+              <span class="project-tech">— React, MongoDB, Express, CVSS</span>
+            </div>
+            <div class="project-desc">Developed a collaborative pentest reporting platform supporting structured vulnerability documentation with CVSS 3.1 scoring, severity classification, evidence attachment, and team-based workflow management.</div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section">
+          <div class="section-title">Education</div>
+          <div class="entry">
+            <div class="entry-top">
+              <div class="entry-role">Bachelor of Science in Computer Science &amp; Engineering (BSc CSE)</div>
+              <div class="entry-date">2022 – Present</div>
+            </div>
+            <div class="entry-company">Green University of Bangladesh, Dhaka</div>
+            <ul>
+              <li>Coursework: Data Structures &amp; Algorithms, Operating Systems, Computer Networks, Software Engineering, Database Management Systems, Web Development, Cyber Security Fundamentals</li>
+              <li>Active member of the university Coding Club and Cyber Security Society</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <!-- CERTIFICATIONS & TRAINING -->
-      <div class="section">
+      <div class="section" style="margin-bottom: 0;">
         <div class="section-title">Certifications &amp; Training</div>
         <ul class="extra-list">
           <li>TryHackMe — Offensive Pentesting Learning Path (50+ rooms completed, Top 10%)</li>
